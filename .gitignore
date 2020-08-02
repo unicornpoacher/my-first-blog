@@ -9,3 +9,4 @@ db.sqlite3
 PW.txt
 00 note.docx
 *.docx
+*.tmp
