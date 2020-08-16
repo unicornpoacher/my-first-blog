@@ -2,5 +2,11 @@
 <body>
     <p>Hi there!</p>
     <p>It works!</p>
+    <div>{{ posts }}</div>
+    <div>
+    {% for post in posts %}
+        {{ post }}
+    {% endfor %}
+    </div>
 </body>
 </html>
