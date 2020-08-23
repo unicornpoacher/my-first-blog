@@ -1,12 +1,21 @@
-<html>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-    <div>{{ posts }}</div>
-    <div>
+{% extends 'blog/base.html' %}
+
+<!-- This tag is how the system knows to look for base.html
+
+the base.html has the template for this page.  Then the block content tags will print out the post.  
+The block content name has to tie with what is defined in the block for base-->
+
+
+
+
+{% block content %}
     {% for post in posts %}
-        {{ post }}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
     {% endfor %}
-    </div>
-</body>
-</html>
+{% endblock %}
